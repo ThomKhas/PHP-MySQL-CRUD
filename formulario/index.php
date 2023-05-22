@@ -7,12 +7,7 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-            <?php if(isset($_SESSION['message'])){?>
-                <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show" role="alert">
-                    <?= $_SESSION['message']?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php session_unset();}?>    
+
             <div class="card card-body">
                 <form action="save_task.php" method="POST"><h1 class="text-center">Formulario de Ingreso de Empleados</h1>
                     <!-- FORMULARIO DATOS PERSONALES -->

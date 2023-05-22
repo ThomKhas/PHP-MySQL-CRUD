@@ -29,7 +29,7 @@
                 <tbody>
                     <?php
                     
-                    $query = "SELECT * FROM form_empleados where id = '40'";
+                    $query = "SELECT * FROM form_empleados where id = '100'";
 
                     $result_tasks = mysqli_query($conn, $query);
 

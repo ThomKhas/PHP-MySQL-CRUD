@@ -11,6 +11,7 @@
 <?php include_once("../headers-footers/header_rrhh.php");?>    
 <div class="col">
             <table class="table table-bordered text-center">
+
                 <thead>
                     <tr>
                         <th>RUT</th>

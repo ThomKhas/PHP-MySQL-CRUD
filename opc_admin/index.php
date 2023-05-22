@@ -49,13 +49,7 @@
 
 <div class="container">
     <div class="row justify-content-md-center">
-        <div class="col-md-4">
-            <?php if(isset($_SESSION['message'])){?>
-                <div class="alert alert-<?= $_SESSION['message_type'];?> alert-dismissible fade show m-1" role="alert">
-                    <?= $_SESSION['message']?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            <?php }?>    
+        <div class="col-md-4">  
             <div class="card card-body">
                 <form action="../funciones/save_emp_admin.php" method="POST"><h1 class="text-center">Formulario de Ingreso de Empleados</h1>
                     <!-- FORMULARIO DATOS PERSONALES -->
@@ -113,7 +107,7 @@
                         <input type="text" name="clave_acceso" class="form-control" placeholder="Clave de Acceso">
                     </div>
                     <div class="form-group m-1">
-                        <input type="number" name="rol_id" class="form-control" placeholder="Rol" min="1" max="3">
+                        <input type="number" name="rol_id" class="form-control" placeholder="| 1 Admin | 2 RRHH | 3 Empleado |" min="1" max="3">
                     </div>
 
                     <input type="submit" class="btn btn-success btn-block m-1" name="save_emp_admin" value="Ingresar Empleado">

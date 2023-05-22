@@ -87,14 +87,15 @@
         
                     case 3:
                         echo "Bienvenido Empleado";
-                        header('location: ../funciones/lista_edit_emp.php');
+                        header('location: ../opc_emp/login_opc_emp.php');
                     break;
         
                     default:
                 }
             }else{
-                // no existe el usuario
-                echo "Nombre de usuario o contraseña incorrecto";
+                $_SESSION['message'] = 'Rut o contraseña incorrectos';
+                $_SESSION['message_type'] = 'danger';
+
             }
         }
             
@@ -112,26 +113,7 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/bdd48295dc.js" crossorigin="anonymous"></script>
     
-    
-    
-    <script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío del formulario por defecto
 
-    // Obtén los valores de los campos de entrada
-    var rut = document.getElementById("rut").value;
-    var pass = document.getElementById("pass").value;
-
-    // Realiza una petición AJAX para enviar los datos a la primera página
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "login.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("username=" + encodeURIComponent(rut) + "&password=" + encodeURIComponent(pass));
-
-    // Redirige al usuario a la segunda página
-    window.location.href = "../funciones/lista_edit_emp.php";
-  });
-    </script>
     
     
     <link rel="stylesheet" src="../index.css">
@@ -155,6 +137,12 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body">
                 <h1>Inicio de Sesion</h1>
+                <?php if(isset($_SESSION['message'])) { ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Ups...</strong> Rut o contraseña incorrectos
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>  
+                <?php } ?> 
                 <form action="#" method="POST" id="myForm">
                     <input type="text" id="rut" name="rut" class="form-control m-1" placeholder="Ingrese su RUT, sin puntos, con guion">
                     <input type="password" id="pass" class="form-control m-1" name="clave_acceso" placeholder="Ingrese su contraseña">
