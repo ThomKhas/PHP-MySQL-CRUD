@@ -29,7 +29,7 @@
                 <tbody>
                     <?php
                     
-                    $query = "SELECT * FROM form_empleados where id = '100'";
+                    $query = "SELECT * FROM form_empleados where id = '".$_SESSION['id']."'";
 
                     $result_tasks = mysqli_query($conn, $query);
 

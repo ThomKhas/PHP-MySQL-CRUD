@@ -64,14 +64,16 @@
         $query = $db->connect()->prepare('SELECT * FROM form_empleados WHERE rut = :rut AND clave_acceso = :clave_acceso');
         $query->execute(['rut' => $rut, 'clave_acceso' => $clave_acceso]);
         
-        $row = $query->fetch(PDO::FETCH_NUM);
+        $row = $query->fetch(PDO::FETCH_ASSOC);
 
         
         if($row == true){
             
-                $rol = $row[16];
+                $rol = $row['rol_id'];
+                
 
                 $_SESSION['rol'] = $rol;
+                $_SESSION['id'] = $row['id'];
 
                 switch($_SESSION['rol']){
                     case 1:
