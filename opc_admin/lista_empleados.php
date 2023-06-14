@@ -79,9 +79,14 @@ $query2 = "SELECT * FROM form_empleados";
     if ($_POST['filtro_area'] != ''){ 
         $query2 .= " OR area = '".$_POST['filtro_area']."'"; 
     }
+
     $sql = $conn->query($query2);
     $cant = mysqli_num_rows($sql);
+
+
 ?>
+
+
 <p>Se encontraron <?php echo $cant; ?> registros</p>
 </form>    
 
