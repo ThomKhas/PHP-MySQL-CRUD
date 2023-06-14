@@ -17,5 +17,6 @@
         $_SESSION['message'] = 'Empleado eliminado.';
         $_SESSION['message_type'] = 'danger';
         header("Location: lista_edit_admin.php");
+        ##asasasasa
     }
 ?>
